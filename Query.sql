@@ -1,2 +1,2 @@
-SELECT DISTINCT rental_rate
+SELECT *
 FROM film;
