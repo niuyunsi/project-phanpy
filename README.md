@@ -37,3 +37,15 @@
 2. connect to db server.
 
 3. send query.
+
+## Upgrade PostgreSQL
+
+- [How to quickly upgrade PostgreSQL version using Docker](https://josepostiga.com/how-to-upgrade-postgresql-version-and-transfer-your-old-data-using-docker/)
+- [PostgreSQL Restore Database](https://www.postgresqltutorial.com/postgresql-restore-database/)
+- [Removing Volumes](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes#:~:text=Removing%20Volumes)
+
+1.
+2.
+3. ```
+   docker exec project-phanpy_db_1 psql -U admin -d dvdrental -f /var/lib/postgresql/data/dump.sql
+   ```
