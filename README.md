@@ -44,8 +44,20 @@
 - [PostgreSQL Restore Database](https://www.postgresqltutorial.com/postgresql-restore-database/)
 - [Removing Volumes](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes#:~:text=Removing%20Volumes)
 
-1.
-2.
-3. ```
+1. with the old PostgreSQL service running, make a backup of the current data
+
+   ```
+   docker exec project-phanpy_db_1 pg_dumpall -U admin > dump.sql
+   ```
+
+2. stop the running container and delete mapped volume
+
+   ```
+   docker volume rm project-phanpy_db-data
+   ```
+
+3. update docker-compose configuration, start the services and restore from backup
+
+   ```
    docker exec project-phanpy_db_1 psql -U admin -d dvdrental -f /var/lib/postgresql/data/dump.sql
    ```
